@@ -1,14 +1,14 @@
 import numpy as np
 
 
-def propagate_ratio_uncertainty(a, a_uncertainty, b, b_uncertainty):
+def propagate_uncertainty_division(a, a_uncertainty, b, b_uncertainty):
     '''
     Returns the propagated uncertainty of a ratio a/b
     '''
     return np.abs(a/b) * np.sqrt((a_uncertainty/a)**2 + (b_uncertainty/b)**2)
 
 
-def propagate_log_uncertainty(x, x_uncertainty):
+def propagate_uncertainty_log10(x, x_uncertainty):
     '''
     Returns uncertainty in log(x) given x and uncertainty in x
     '''
@@ -19,4 +19,4 @@ def propagate_log_ratio_uncertainty(a, a_uncertainty, b, b_uncertainty):
     '''
     Returns uncertainty in log(a/b)
     '''
-    return propagate_log_uncertainty(a/b, propagate_ratio_uncertainty(a=a, a_uncertainty=a_uncertainty, b=b, b_uncertainty=b_uncertainty))
+    return propagate_uncertainty_log10(a/b, propagate_uncertainty_division(a=a, a_uncertainty=a_uncertainty, b=b, b_uncertainty=b_uncertainty))
