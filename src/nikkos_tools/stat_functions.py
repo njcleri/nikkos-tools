@@ -1,5 +1,11 @@
 import numpy as np
 
+def propagate_uncertainty_addition(a_uncertainty, b_uncertainty):
+    '''
+    Returns the propagated uncertainty of a+b
+    '''
+    return np.sqrt(a_uncertainty**2 + b_uncertainty**2)
+
 
 def propagate_uncertainty_division(a, a_uncertainty, b, b_uncertainty):
     '''
