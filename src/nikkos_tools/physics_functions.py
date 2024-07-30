@@ -24,29 +24,29 @@ def get_wavelength_from_ev(energy_eV):
     return (const.h*const.c/(energy_eV*u.eV)).to(u.Angstrom).value
 
 
-def get_ev_from_wavelength(wave_A):
+def get_ev_from_wavelength(wavelength_angstroms):
     '''
     Takes photon wavelength in Angstroms and returns energy in eV
     '''
-    return (const.h*const.c/(wave_A*u.Angstrom)).to(u.eV).value
+    return (const.h*const.c/(wavelength_angstroms*u.Angstrom)).to(u.eV).value
   
   
-def convert_wavelength_air_to_vacuum(lam_air):
+def convert_wavelength_air_to_vacuum(air_wavelength):
     '''
     Convert from air wavelength to vacuum wavelength
     '''
-    s = 10**4/lam_air 
+    s = 10**4/air_wavelength 
     n = 1 + 0.00008336624212083 + 0.02408926869968 / (130.1065924522 - s**2) + 0.0001599740894897 / (38.92568793293 - s**2)
-    return lam_air*n
+    return air_wavelength*n
 
 
-def convert_wavelength_vacuum_to_air(lam_vac):
+def convert_wavelength_vacuum_to_air(vacuum_wavelength):
     '''
     Convert from air wavelength to vacuum wavelength
     '''
-    s = 10**4/lam_vac 
+    s = 10**4/vacuum_wavelength 
     n = 1 + 0.0000834254 + 0.02406147 / (130 - s**2) + 0.00015998 / (38.9 - s**2)
-    return lam_vac/n
+    return vacuum_wavelength/n
 
 
 def get_luminosity(z, flux_cgs):
