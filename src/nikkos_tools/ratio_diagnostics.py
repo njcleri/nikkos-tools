@@ -7,17 +7,17 @@ def bpt_kewley_2001(logniiha):
 	return 0.61/(logniiha - 0.47) + 1.19    
 
 
+def plot_bpt_kewley_2001(ax):
+    x = np.linspace(-2,0.46, 1000)
+    ax.plot(x, bpt_kewley_2001(x), c='black', ls=':', lw=3, label='Kewley et al. 2001', zorder=-9)
+    
+
 def bpt_kauffmann_2003(logniiha):
 	'''
 	Defining the BPT AGN/SF dividing line from Kauffmann 2003.
 	'''    
 	return 0.61/(logniiha - 0.05) + 1.3    
 
-    
-def plot_bpt_kewley_2001(ax):
-    x = np.linspace(-2,0.46, 1000)
-    ax.plot(x, bpt_kewley_2001(x), c='black', ls=':', lw=3, label='Kewley et al. 2001', zorder=-9)
-    
     
 def plot_bpt_kauffmann_2003(ax):
     x = np.linspace(-2,0.04, 1000)
