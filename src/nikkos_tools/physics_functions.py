@@ -117,3 +117,44 @@ def get_Lx_from_flux(log_fluxs, zs, gam=1.6, Lx_Elo=2., Lx_Eup=10., \
     return logLxs
 
 
+def get_minimum_redshift_prism(wave):
+    return 6000/wave - 1
+
+
+def get_maximum_redshift_prism(wave):
+    return 53000/wave - 1
+
+
+def get_minimum_redshift_G140X_070LP(wave):
+    return 7000/wave - 1
+
+
+def get_maximum_redshift_G140X_070LP(wave):
+    return 12700/wave - 1
+
+
+def get_minimum_redshift_G140X_100LP(wave):
+    return 9700/wave - 1
+
+
+def get_maximum_redshift_G140X_100LP(wave):
+    return 18900/wave - 1
+
+
+def get_minimum_redshift_G235X(wave):
+    return 16600/wave - 1
+
+
+def get_maximum_redshift_G235X(wave):
+    return 31700/wave - 1
+
+
+def get_minimum_redshift_G395X(wave):
+    return 28700/wave - 1
+
+
+def get_maximum_redshift_G395X(wave):
+    return 52700/wave - 1
+
+def get_minimum_resolving_power(wavelength1, wavelength2):
+    return ((wavelength1 + wavelength2)/2) / np.abs(wavelength1 - wavelength2)

@@ -35,3 +35,7 @@ def make_directories(path):
         print("Folder %s already exists" % path)
         
     return path
+
+
+def get_line_rotation(x1,x2,y1,y2):
+    return np.rad2deg(np.arctan((y2 - y1)/(x2 - x1)))
