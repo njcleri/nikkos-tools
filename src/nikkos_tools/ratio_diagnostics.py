@@ -1,36 +1,30 @@
 import numpy as np
 
-def bpt_kewley01(logniiha):
+def bpt_kewley_2001(logniiha):
 	'''
 	Defining the BPT AGN/SF dividing line from Kewley 2001.
 	'''    
 	return 0.61/(logniiha - 0.47) + 1.19    
 
 
-def bpt_kauffmann03(logniiha):
+def bpt_kauffmann_2003(logniiha):
 	'''
 	Defining the BPT AGN/SF dividing line from Kauffmann 2003.
 	'''    
 	return 0.61/(logniiha - 0.05) + 1.3    
 
-
-def plot_bpt(ax):
-    x = np.linspace(-2,0.04, 1000)
-    ax.plot(x, bpt_kauffmann03(x), c='black', ls='-', lw=3, label='Kauffmann et al. 2003', zorder=-9)
-    ax.plot(x, bpt_kewley01(x), c='black', ls=':', lw=3, label='Kewley et al. 2001', zorder=-9)
     
-    
-def plot_bpt_kewley01(ax):
+def plot_bpt_kewley_2001(ax):
     x = np.linspace(-2,0.46, 1000)
-    ax.plot(x, bpt_kewley01(x), c='black', ls=':', lw=3, label='Kewley et al. 2001', zorder=-9)
+    ax.plot(x, bpt_kewley_2001(x), c='black', ls=':', lw=3, label='Kewley et al. 2001', zorder=-9)
     
     
-def plot_bpt_kauffmann(ax):
+def plot_bpt_kauffmann_2003(ax):
     x = np.linspace(-2,0.04, 1000)
-    ax.plot(x, bpt_kauffmann03(x), c='black', ls='-', lw=3, label='Kauffmann et al. 2003', zorder=-9)
+    ax.plot(x, bpt_kauffmann_2003(x), c='black', ls='-', lw=3, label='Kauffmann et al. 2003', zorder=-9)
 
 
-def vo87(logsiiha):
+def vo87_trump_2015(logsiiha):
 	'''
 	Defining the unVO87 AGN/SF dividing line from Trump et al. 2015.
 	Singularity at log(SII/Ha) = 0.0917
@@ -38,12 +32,12 @@ def vo87(logsiiha):
 	return 0.48/(1.09*logsiiha - 0.10) + 1.3    
 
 
-def plot_vo87(ax):
+def plot_vo87_trump_2015(ax):
     x = np.linspace(-2,0.09, 1000)
-    ax.plot(x, vo87(x), c='black', ls='-', lw=3, label= 'Trump et al. 2015', zorder=-9)
+    ax.plot(x, vo87_trump_2015(x), c='black', ls='-', lw=3, label= 'Trump et al. 2015', zorder=-9)
 	
  
-def unvo87(logsiiha):
+def unvo87_backhaus_2022(logsiiha):
 	'''
 	Defining the unVO87 AGN/SF dividing line from Backhaus et al. 2021.
 	Singularity at log(SII/Ha) = -0.11
@@ -51,12 +45,12 @@ def unvo87(logsiiha):
 	return 0.48/(1.09*logsiiha + 0.12) + 1.3
 
 
-def plot_unvo87(ax):
+def plot_unvo87_backhaus_2022(ax):
     x = np.linspace(-2,-0.12, 1000)
-    ax.plot(x, vo87(x), c='black', ls='-', lw=3, label= 'unVO87', zorder=-9)
+    ax.plot(x, unvo87_backhaus_2022(x), c='black', ls='-', lw=3, label= 'unVO87', zorder=-9)
     
     
-def ohno(logneiiioii):
+def ohno_backhaus_2022(logneiiioii):
 	'''
 	defining the unv087 dividing line from Backhaus et al. 2021.
 	Singularity at log(NeIII/OII) = 0.285
@@ -64,12 +58,12 @@ def ohno(logneiiioii):
 	return 0.35/(2.8*logneiiioii - 0.8) + 0.64
 
 
-def plot_ohno(ax):
+def plot_ohno_backhaus_2022(ax):
     xohno = np.linspace(-2,0.285, 1000)
-    ax.plot(xohno, ohno(xohno), c='black', ls='-', lw=3, label='Backhaus et al. 2022', zorder=-9)
+    ax.plot(xohno, ohno_backhaus_2022(xohno), c='black', ls='-', lw=3, label='Backhaus et al. 2022', zorder=-9)
 
 
-def mass_excitation_j11(logmass):
+def mass_excitation_juneau_2011(logmass):
 	'''
  	Return the Mass Excitation AGN/SF dividing line from Juneau et al. 2011
 	'''
@@ -90,7 +84,7 @@ def mass_excitation_j11(logmass):
 	return y_upper, y_lower
 
 
-def mass_excitation_j14(logmass):
+def mass_excitation_juneau_2014(logmass):
 	'''
  	Return the Mass Excitation AGN/SF dividing line from Juneau et al. 2014
 	'''
